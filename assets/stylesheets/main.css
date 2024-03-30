@@ -1,0 +1,419 @@
+:root{
+    --text-color: white;
+    --btn-text-color: white;
+    --btn-background-color: rgb(75, 73, 73); 
+}
+
+.h-100{
+    height: 100%;
+}
+
+#container{
+    height: 100vh;
+    background-image: url("../images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 20px 0px;
+}
+
+@media(max-width:768px){
+    #container{
+        padding: 0px;
+    }
+}
+
+#main-nav{
+    width: 1260px;
+    margin: 0 auto 20px;
+}
+
+#main-nav ul{
+    display: flex;
+    margin: 0px;
+    padding: 0px ;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+#main-nav ul li{
+    width: 100%;
+    text-align: center;
+}
+
+#main-nav ul li a:hover{
+    background-color: rgb(75, 73, 73);
+    color: white;
+}
+
+#main-nav ul li a{
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    background-color: aqua;
+    text-decoration: none;
+}
+
+@media(max-width:768px){
+    #main-nav{
+        position: fixed;
+        z-index: 100;
+    }
+    #main-nav ul li a span{
+        display: none;
+    }
+}
+
+.wrapper{
+    background-color: rgb(75, 73, 73);
+    width: 1260px;
+    height: calc(100vh - 100px);
+    margin:0 auto;
+    border-radius: 20px;
+    position:relative;
+    box-shadow: 0px 0px 20px 2px rgb(118 113 113);
+}
+
+.wrapper > .row{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* breakpoints
+1400px- xxl
+1200px- xl
+992px- lg
+768px- md
+576px- sm */
+
+@media(max-width:1400px){
+    .wrapper, #main-nav{
+        width: 1160px;
+    }
+}
+
+@media(max-width:1200px){
+    .wrapper, #main-nav{
+        width: 970px;
+    }
+}
+
+@media(max-width:992px){
+    .wrapper, #main-nav{
+        width: 760px;
+    }
+}
+
+@media(max-width:768px){
+    .wrapper, #main-nav{
+        width: 100%;
+    }
+    .wrapper{
+        height: 100%;
+    }
+    .wrapper > .row{
+        position: static;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.intro{
+    text-align: center;
+    background-color: rgb(107, 106, 106);
+    height:100%;
+    width:100%;
+    color: var(--text-color);
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.intro a{
+    color: var(--text-color)
+}
+
+.intro ul{
+    margin:0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.intro img{
+    border-radius: 50%;
+}
+
+.intro img:hover{
+    transform: scale(1.5,1.5);
+}
+
+@media(max-width:768px){
+    .intro{
+        display: none;
+    }
+}
+
+#home{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition-duration: 1s;
+}
+
+#home h1{
+    font-size: 4em;
+    color: var(--text-color);
+}
+
+#home p{
+    font-size: 2em;
+    color: #bbb5b59f;
+}
+
+@media(max-width:768px){
+    .home{
+        font-size: 1em;
+        color: var(--text-color);
+    }
+}
+
+.content{
+    position:relative;
+    overflow-x: hidden;
+    perspective: 400px;
+}
+
+.content > section{
+    overflow-y: scroll;
+}
+
+@media(max-width:768px){
+    .content{
+        position: absolute;
+        width: 100%;
+        top:0px;
+    }
+}
+
+#about, #skills, #projects, #contact{
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    z-index: 10;
+    position: absolute;
+    background-color: rgb(45, 38, 38);
+    color:var(--text-color);
+    transition-duration: 1s;
+    transform: translateX(-100%) rotateY(180deg);
+    
+}
+
+#about h2, #skills h2, #projects h2, #contact h2{
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid aqua;
+}
+
+#about p{
+    text-align: justify;
+}
+
+#about ul li{
+    letter-spacing: 1px;
+}
+
+#about ul li span{
+    color:aqua;
+    font-weight: bold;
+}
+
+#about .icon{
+    color:aqua;
+    font-size: 2em;
+}
+
+#about h4{
+    font-size: 1.2em;
+}
+
+@media(max-width:1200px){
+    #about ul li{
+        font-size: 0.9em;
+    }
+}
+
+.timeline{
+    position: relative;
+}
+
+.timeline .box{
+    color: rgb(75, 73, 73);
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline .box .inner-box{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.timeline .box.left{
+    padding-left: 0px;
+}
+
+.timeline .box.right{
+    position: relative;
+    left: 50%;
+    padding-left: 20px;
+}
+
+.timeline .box::after{
+    content:"";
+    position:absolute;
+    top: 35px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: aqua;
+}
+
+.timeline .box.left::after{
+    right: -12px;
+}
+
+.timeline .box.right::after{
+    left: -9px;
+}
+
+.timeline::after{
+    content:"";
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0%;
+    border: 2px solid white;
+}
+
+.timeline .box::before{
+    content:"";
+    position:absolute;
+    top: 25px;
+    border: 25px solid;
+    z-index: 2;
+}
+
+.timeline .box.left::before{
+    right: -12px;
+    border-color: transparent transparent transparent white;
+}
+.timeline .box.right::before{
+    left: -11px;
+    border-color: transparent white transparent transparent;
+}
+
+.skillset ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.skillset ul li .bar{
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+}
+
+.skillset ul li span{
+    display: block;
+    position: relative;
+    height: inherit;
+    width: inherit;
+}
+
+.skillset ul li .p-45{
+    width: 45%;
+}
+
+.skillset ul li .p-50{
+    width: 50%;
+}
+
+.skillset ul li .p-60{
+    width: 60%;
+}
+
+.skillset ul li .p-65{
+    width: 65%;
+}
+
+.skillset ul li .p-70{
+    width:70%;
+}
+
+.skillset ul li .p-75{
+    width: 75%;
+}
+
+.skillset ul li span{
+    position: absolute;
+    content: "";
+    height: 100%;
+    border-radius: 10px;
+    background-color: aqua;
+    animation: progressbar 1s linear;
+}
+
+@keyframes progressbar{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+
+#projects .card{
+    color: black;
+    margin-bottom: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 80%;
+}
+
+#projects .card img{
+    transition-duration: 1s;
+    height: 50%;
+}
+
+#projects .card img:hover{
+    transform: scale(1.5,1.5);
+}
+
+#home.show,
+#about.show,
+#skills.show, 
+#projects.show, 
+#contact.show{
+    transform: translateX(0%) rotateY(0deg);
+}
+
+@media(max-width: 768px){
+    #about, #skills, #projects, #contact{
+        margin-top: 20px;
+    }
+}
