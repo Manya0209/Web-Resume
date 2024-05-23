@@ -130,6 +130,7 @@
     align-items: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    position: relative;
 }
 
 .intro a{
@@ -164,6 +165,7 @@
     display: flex;
     align-items: center;
     transition-duration: 1s;
+    position: relative;
 }
 
 #home h1{
